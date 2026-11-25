@@ -1,0 +1,37 @@
+# Core ML & Vision
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.40.0
+Pillow>=10.0.0
+opencv-python-headless>=4.8.0
+open-clip-torch>=2.24.0
+
+# Vector Store & Embedding
+lancedb>=0.6.0
+chromadb>=0.4.0
+
+# LangChain Agent Framework
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-openai>=0.1.0          # optional: swap for local LLM
+langchain-huggingface>=0.0.3
+
+# Data & Utilities
+numpy>=1.24.0
+pandas>=2.0.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+PyYAML>=6.0
+
+# API / Serving / UI
+streamlit>=1.35.0
+fastapi>=0.111.0
+uvicorn>=0.29.0
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+
+# Optional: local LLM via Ollama or ctransformers
+# ollama>=0.1.0
+# ctransformers>=0.2.27

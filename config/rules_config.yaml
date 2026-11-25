@@ -1,0 +1,45 @@
+##############################################################
+# Drone Security Analyst — Alert Rules Configuration
+##############################################################
+
+loitering:
+  enabled: true
+  curfew_start_hour: 22          # 22:00 (10 PM)
+  curfew_end_hour: 6             # 06:00 (6 AM)
+  threshold_seconds: 60          # Alert if person present > 60s during curfew
+  zones:
+    - "North Perimeter Gate"
+    - "South Perimeter Gate"
+    - "Restricted Fence Line"
+    - "Main Entrance"
+
+reconnaissance:
+  enabled: true
+  repeat_vehicle_threshold: 2    # Alert if same vehicle seen >= 2 times per patrol
+  time_window_minutes: 60        # Within this rolling window
+
+perimeter_breach:
+  enabled: true
+  altitude_threshold_m: 30       # Only flag when drone is below 30m (close to ground)
+  cross_zone_keywords:
+    - "climbing"
+    - "jumping"
+    - "crawling"
+    - "cutting"
+    - "breaking"
+
+abandoned_object:
+  enabled: true
+  keywords:
+    - "backpack"
+    - "bag"
+    - "package"
+    - "box"
+    - "suitcase"
+  unattended_threshold_frames: 3  # Flag if same object seen without a person for 3+ frames
+
+alert_levels:
+  LOW: "Logged — No immediate action required"
+  MEDIUM: "Notify security personnel on duty"
+  HIGH: "Dispatch security to location immediately"
+  CRITICAL: "Trigger emergency response protocol"
